@@ -1,0 +1,19 @@
+{
+  "name": "test-atelier",
+  "version": "1.0.0",
+  "description": "a technical test for atelier",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon app.js"
+  },
+  "author": "Agbo anthony",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22"
+  }
+}

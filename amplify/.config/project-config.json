@@ -5,8 +5,8 @@
   "javascript": {
     "framework": "none",
     "config": {
-      "SourceDir": "/",
-      "DistributionDir": "/",
+      "SourceDir": "api",
+      "DistributionDir": "api",
       "BuildCommand": "npm.cmd run-script build",
       "StartCommand": "npm.cmd run-script start"
     }

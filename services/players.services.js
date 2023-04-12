@@ -1,16 +1,29 @@
 const Player = require('../models/player');
 const { isEven, convertToNumber } = require('../helpers/players.helper');
 
+/**
+ * 
+ * @returns {object[]}
+ */
 function getSortPlayers() {
     const players = Player.getAll();
     return players;
 }
 
+/**
+ * 
+ * @param {number} id 
+ * @returns {object}
+ */
 function getInfosPlayer(id) {
    const player = Player.get(id);
    return player;
 }
 
+/**
+ * 
+ * @returns {string}
+ */
 function getRatio() {
     const players = Player.getAll();
     const groupByCountry = players.reduce((list, player) => {
@@ -32,6 +45,10 @@ function getRatio() {
         return {}
 }
 
+/**
+ * 
+ * @returns {number}
+ */
 function getAverageIMC() {
     const players = Player.getAll();
     const imcList = players.map((player) => (player.data.weight / 1000) / Math.pow(player.data.height / 100, 2));
@@ -39,6 +56,10 @@ function getAverageIMC() {
     return averageImc;
 }
 
+/**
+ * 
+ * @returns {number}
+ */
 function getMedianeHeight() {
     const players = Player.getAll();
     const weightList = players.sort((p1, p2) => (p1.data.height > p2.data.height) ? 1 : (p1.data.height < p2.data.height) ? -1 : 0);
@@ -50,7 +71,12 @@ function getMedianeHeight() {
     return players[indexMedian - 1].data.height;
 }
 
-function checkPlayers(tags = []){
+/**
+ * 
+ * @param {string[]} tags 
+ * @returns {object}
+ */
+function checkPlayers(tags = []) {
     const players = Player.getAll();
     if (!players) {
         return {
@@ -66,7 +92,12 @@ function checkPlayers(tags = []){
         }
     }
 }
-
+/**
+ * 
+ * @param {object} player 
+ * @param {string[]} tags 
+ * @returns {object}
+ */
 function _checkInfos(player, tags = []) {
     if (tags.includes('rank')) {
         if (isNaN(player.data.rank) || convertToNumber(player.data.rank) <= 0) {

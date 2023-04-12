@@ -5,7 +5,7 @@ class Player {
         this.data = data.players;
     }
 
-    getAll(){
+    getAll() {
         return this.data;
     }
 

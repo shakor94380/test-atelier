@@ -162,7 +162,7 @@ describe('Test player Controller', () => {
             expect(playerService.getMedianeHeight).toHaveBeenCalledWith();
             expect(res.status).toHaveBeenCalledWith(200);
             expect(res.json).toHaveBeenCalledWith({
-                ratio: 'codes',
+                ratio: 'code',
                 imc: 'imc',
                 height: 'height'
             });

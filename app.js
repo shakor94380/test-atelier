@@ -2,6 +2,7 @@ const express = require('express');
 var bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+const { checkPlayersData } = require('./api/middlewares/players.middleware')
 
 const { port } = require('./config/index');
 
@@ -9,6 +10,7 @@ const { port } = require('./config/index');
 const routes = require('./api/routes/index');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(checkPlayersData);
 app.use("/", routes);
 
 app.get('/',function(req,res){

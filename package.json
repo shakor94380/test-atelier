@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon app.js",
-    "build": "npm install"
+    "build": "npm start"
   },
   "author": "Agbo anthony",
   "license": "ISC",

@@ -21,6 +21,10 @@ app.get("/health", (req, res) => {
   res.send("it work");
 })
 
+app.get('*', function(req, res){
+  res.sendFile(path.join(__dirname+'/error.html'));
+});
+
 app.listen(port || 3000, () => {
   console.log(`Example app listening on port ${port}`)
 })
